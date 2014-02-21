@@ -14,4 +14,8 @@
         L.marker(marker.slice(0, 2)).addTo(map);
         map.setView(marker.slice(0, 2), marker[2]);
     }
+    if (query.text) {
+        var text = document.getElementById('text');
+        text.innerHTML = decodeURI(query.text);
+    }
 })();
