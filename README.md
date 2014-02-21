@@ -1,6 +1,6 @@
 ## At
 
-Simple location sharing:
+Bare bones location sharing:
 
 http://lxbarth.com/at/#marker=[latitude]/[longitude]/[zoom level]&text=[url encoded caption]
 
