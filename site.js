@@ -12,7 +12,8 @@
     if (query.marker) {
         var icon = L.icon({
             iconUrl: 'http://api.tiles.mapbox.com/v3/marker/pin-l-star+3C4E59.png',
-            iconRetinaUrl: 'my-icon@2x.png'
+            iconRetinaUrl: 'my-icon@2x.png',
+            iconAnchor: [18, 45]
         });
         var marker = query.marker.split('/');
         L.marker(marker.slice(0, 2), {icon: icon}).addTo(map);
