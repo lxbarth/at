@@ -1,11 +1,31 @@
-#text {
+@font-face {
+    font-family:'Open Sans Bold';
+    src:url('opensans-semibold.eot');
+    src:url('opensans-semibold.eot?#iefix') format('embedded-opentype'),
+        url('opensans-semibold.woff') format('woff');
+    }
+#banner {    
+    font-family:'Arial';
     position: absolute;
     color: #fff;
-    background-color: #000;
-    width: 100%;
-    padding: 20px;
+    background-color: rgba(60, 78, 89, 1);
     bottom:0;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 40px;
-}
+    left: 0;
+    right: 0;
+    font-size: 25px;
+    line-height: 50px;
+    }
+#text {    
+    padding: 20px 40px;
+    }
+.pointer-up {
+    width: 0;
+    height: 0;
+    top: -40px;
+    left: 50%;
+    margin-left: -40px;
+    position: absolute;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid rgba(60, 78, 89, 1);
+    }
