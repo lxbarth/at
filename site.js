@@ -11,7 +11,7 @@
 
     if (query.marker) {
         var icon = L.icon({
-            iconUrl: 'http://api.tiles.mapbox.com/v3/marker/pin-l-star+3C4E59.png',
+            iconUrl: 'http://api.tiles.mapbox.com/v3/marker/pin-l-circle-stroked+3C4E59.png',
             iconRetinaUrl: 'my-icon@2x.png',
             iconAnchor: [18, 45]
         });
@@ -22,5 +22,8 @@
     if (query.text) {
         var text = document.getElementById('text');
         text.innerHTML = decodeURI(query.text);
+        text.onclick = function(){
+            marker && map.setView(marker.slice(0, 2), marker[2]);
+        };
     }
 })();

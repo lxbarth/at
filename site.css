@@ -1,22 +1,26 @@
 @font-face {
-    font-family:'Open Sans Bold';
-    src:url('opensans-semibold.eot');
-    src:url('opensans-semibold.eot?#iefix') format('embedded-opentype'),
-        url('opensans-semibold.woff') format('woff');
-    }
-#banner {    
-    font-family:'Arial';
+  font-family:'Open Sans';
+    src:url('opensans-regular.eot');
+    src:url('opensans-regular.eot?#iefix') format('embedded-opentype'),
+        url('opensans-regular.woff') format('woff');
+  }
+#banner {
+    font-family:'Open Sans';
     position: absolute;
     color: #fff;
     background-color: rgba(60, 78, 89, 1);
     bottom:0;
     left: 0;
     right: 0;
-    font-size: 25px;
-    line-height: 50px;
+    font-size: 20px;
+    line-height: 40px;
+    margin: 1%;
+    cursor: pointer;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.1),
+                     0px -5px 35px rgba(255,255,255,0.1);
     }
 #text {    
-    padding: 20px 40px;
+    padding: 20px 40px 30px;
     }
 .pointer-up {
     width: 0;
