@@ -49,7 +49,7 @@
                 text.innerHTML = '';
             }
         };
-        text.onkeypress = function() {
+        text.onkeyup = function() {
             setHash({text: text.innerHTML});
         };
     }
