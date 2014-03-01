@@ -8,6 +8,12 @@ body {
     margin:0;
     padding:0;
     background-color: rgb(60, 78, 89);
+    font-family:'Open Sans';
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.1),
+                 0px -5px 35px rgba(255,255,255,0.1);
     }
 #map {
     position:absolute;
@@ -17,18 +23,12 @@ body {
     right: 20px;
     }
 #banner {
-    font-family:'Open Sans';
     position: absolute;
-    color: #fff;
     background-color: rgb(60, 78, 89);
     bottom:0;
     left: 0;
     right: 0;
-    font-size: 20px;
     line-height: 40px;
-    cursor: pointer;
-    text-shadow: 2px 8px 6px rgba(0,0,0,0.1),
-                 0px -5px 35px rgba(255,255,255,0.1);
     }
 #text {    
     padding: 20px 30px;
@@ -44,4 +44,12 @@ body {
     border-left: 40px solid transparent;
     border-right: 40px solid transparent;
     border-bottom: 40px solid rgba(60, 78, 89, 1);
+    }
+.action {
+    position: absolute;
+    top: 30px;
+    right:30px;
+    background-color: rgb(60, 78, 89);
+    padding: 5px 20px;
+    display: none;
     }
