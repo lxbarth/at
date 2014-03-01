@@ -31,7 +31,6 @@
             iconAnchor: [18, 45]
         });
         var marker = hash.marker.split('/');
-        console.log(marker);
         L.marker(marker.slice(0, 2), {icon: icon}).addTo(map);
         map.setView(marker.slice(0, 2), marker[2]);
     }
