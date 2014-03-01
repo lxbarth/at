@@ -48,6 +48,7 @@
             };
         };
         app.edit = function() {
+            location.hash = '';
             var textDiv = document.getElementById('text');
             var startMsg = textDiv.innerHTML = 'Type your message here';
             textDiv.onclick = function() {
@@ -69,7 +70,6 @@
                     var pos = app.map.containerPointToLatLng(L.point(e.x - 20, e.y - 20));
                     app.placeMarker(pos);
                     app.map.panTo(pos);
-
                 }
             };
             document.getElementById('new').style.display = 'none';
