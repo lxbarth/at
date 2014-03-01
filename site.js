@@ -5,7 +5,7 @@
             .split('&')
             .forEach(function(q) {
                 q = q.split('=');
-                if (q[0]) hash[q[0]] = decodeURI(q[1]) || true;
+                if (q[0] && q[1]) hash[q[0]] = decodeURI(q[1]);
             });
         return hash;
     };
