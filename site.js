@@ -23,16 +23,22 @@
 
     var map = L.mapbox.map('map', 'lxbarth.map-lxoorpwz');
 
-    var hash = parseHash();
-    if (hash.marker) {
+    var marker = null;
+    var placeMarker = function(pos) {
+        marker && map.removeLayer(marker);
         var icon = L.icon({
             iconUrl: 'http://api.tiles.mapbox.com/v3/marker/pin-l-circle-stroked+3C4E59.png',
             iconRetinaUrl: 'my-icon@2x.png',
             iconAnchor: [18, 45]
         });
-        var marker = hash.marker.split('/');
-        L.marker(marker.slice(0, 2), {icon: icon}).addTo(map);
-        map.setView(marker.slice(0, 2), marker[2]);
+        marker = L.marker(pos, {icon: icon}).addTo(map);
+    };
+
+    var hash = parseHash();
+    if (hash.marker) {
+        var m = hash.marker.split('/');
+        placeMarker(m.slice(0, 2));
+        map.setView(m.slice(0, 2), m[2]);
     }
     var startMessage = "Type your message here";
     var text = document.getElementById('text');
@@ -53,4 +59,20 @@
             setHash({text: text.innerHTML});
         };
     }
+    var mapDiv = document.getElementById('map');
+    var last = {};
+    mapDiv.onmousedown = function(e) {
+        last.t = Date.now();
+        last.x = e.x;
+        last.y = e.y;
+    };
+    mapDiv.onmouseup = function(e) {
+        var d = Math.sqrt((e.x - last.x) * (e.x - last.x) + (e.y - last.y) * (e.y - last.y));
+        if ((Date.now() - last.t) > 300 && d < 10) {
+            var pos = map.containerPointToLatLng(L.point(e.x - 20, e.y - 20));
+            placeMarker(pos);
+            map.panTo(pos);
+            setHash({marker: pos.lat + '/' + pos.lng + '/' + map.getZoom()});
+        }
+    };
 })();
